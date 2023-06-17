@@ -564,8 +564,12 @@ public class Main : GLib.Object{
 		exclude_list_default.add("/lost+found");
 		exclude_list_default.add("/timeshift/*");
 		exclude_list_default.add("/timeshift-btrfs/*");
+
+/*              modified for backup those directories - by mimishy2000
+
 		exclude_list_default.add("/data/*");
 		exclude_list_default.add("/DATA/*");
+*/
 		exclude_list_default.add("/cdrom/*");
 		exclude_list_default.add("/sdcard/*");
 		exclude_list_default.add("/system/*");
@@ -766,9 +770,12 @@ public class Main : GLib.Object{
 			bool exclude_all = !include_hidden && !include_all;
 
 			if (exclude_all){
+
+/*              modified for backup user home directory - by mimishy2000
 				if (!exclude_list_user.contains(exc_pattern)){
 					exclude_list_user.add(exc_pattern);
 				}
+*/
 				if (exclude_list_user.contains(inc_pattern)){
 					exclude_list_user.remove(inc_pattern);
 				}
